@@ -1,0 +1,58 @@
+<div *ngIf="modalEditarSwitch == true">
+    <app-editar-producto></app-editar-producto>>
+</div>
+
+<div *ngIf="modalNuevoSwitch == true">
+    <app-nuevo-producto></app-nuevo-producto>
+</div>
+
+
+<div class="limiter">
+
+<div class="container-table100">
+
+<button  (click)="openModalNuevo()"   type="button" id="btnAbrirModal2" class= "btn" >
+        Nuevo producto
+</button>
+<br>
+<div class="wrap-table100">
+<div class="table100">
+<table>
+<thead>
+<tr class="table100-head">
+<th class="column1">Nombre</th>
+<th class="column3">Marca</th>
+<th class="column2">Categoria</th>
+<th class="column4">Cantidad</th>
+<th class="column5">Precio</th>
+<th class="column6">Acciones</th>
+
+</tr>
+</thead>
+
+<tbody>
+<tr *ngFor="let producto of productos;  let rowIndex = index">
+    <td class="column1">{{ producto.nombre }} </td>
+    <td class="column3">{{ producto.marca}}</td>
+    <td class="column2">{{ producto.oCategoria.nombre}}</td>
+    <td class="column4">{{ producto.cantidad}}</td>
+    <td class="column5">{{ producto.precio}}</td>
+    <td>
+        <div>
+            <a (click)="enviarProducto(rowIndex)" > Editar</a>
+            
+            <a (click)="eliminarProducto(rowIndex)"> Eliminar</a>
+        </div>
+    </td>
+
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+

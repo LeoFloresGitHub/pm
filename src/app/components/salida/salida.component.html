@@ -1,0 +1,60 @@
+<div *ngIf="modalEditarSwitch == true">
+    <app-editar-salida></app-editar-salida>
+</div>
+
+<div *ngIf="modalNuevoSwitch == true">
+    <app-nueva-salida></app-nueva-salida>
+</div>
+
+
+
+<div class="limiter">
+
+    <div class="container-table100">
+    
+    <button  (click)="openModalNuevo()"   type="button" id="btnAbrirModal2" class= "btn" >
+            Nueva Salida
+    </button>
+    <br>
+    <div class="wrap-table100">
+    <div class="table100">
+    <table>
+    <thead>
+    <tr class="table100-head">
+    <th class="column1">Fecha</th>
+    <th class="column3">Producto</th>
+    <th class="column2">Cantidad</th>
+    <th class="column4">Descuento</th>
+    <th class="column5">Total</th>
+    <th class="column6">Acciones</th>
+    
+    </tr>
+    </thead>
+    
+    <tbody>
+    <tr *ngFor="let salida of salidas;  let rowIndex = index">
+        <td class="column1">{{ salida.fecha | date: 'dd/MM/yyyy'}} </td>
+        <td class="column3">{{ salida.oProducto.nombre}} - {{ salida.oProducto.marca}}</td>
+        <td class="column2">{{ salida.cantidad}}</td>
+        <td class="column4">{{ salida.descuento}}</td>
+        <td class="column5">{{ salida.total}}</td>
+        <td>
+            <div>
+                <a (click)="enviarSalida(rowIndex)" > Editar</a>
+                
+                <a (click)="eliminarSalida(rowIndex)"> Eliminar</a>
+            </div>
+        </td>
+    
+    </tr>
+    
+    
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    
+    

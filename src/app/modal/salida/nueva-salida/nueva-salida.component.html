@@ -1,0 +1,55 @@
+<div class="modal">
+    <div class="modal_body ">
+        <form class="form" (submit)="enviarSalida()">
+            <p class="title">Nueva Salida </p>
+
+            <label>
+                <input required type="date" [(ngModel)]="nuevaSalida.fecha" name="fecha" [value]="fechaActualizada" class="input">
+                <span>Fechas</span>
+            </label>
+
+
+            <label>
+                <select required type="number" [(ngModel)]="nuevaSalida.idProducto" name="idProducto" class="input" 
+                (ngModelChange)="cambiarDetalles(nuevaSalida.idProducto)">
+                    <option *ngFor="let producto of productos" value={{producto.idProducto}}>{{producto.nombre}}</option>
+                </select>
+                <span>Producto</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="nuevaSalida.cantidad" name="cantidad" class="input"
+                (ngModelChange)="cambiarDetalles(nuevaSalida.idProducto)">
+                <span>Cantidad</span>
+            </label>
+
+            <label>
+                <input required type="number" value={{precioProducto}} [(ngModel)]="nuevaSalida.precio" name="precio" class="input" readonly>
+                <span>Precio</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="nuevaSalida.delivery" name="delivery" class="input"
+                (ngModelChange)="cambiarDetalles(nuevaSalida.idProducto)">
+                <span>Delivery</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="nuevaSalida.descuento" name="descuento" class="input"
+                (ngModelChange)="cambiarDetalles(nuevaSalida.idProducto)">
+                <span>Descuento</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="nuevaSalida.total" name="total" value={{totality}}  class="input" readonly>
+                <span>Total</span>
+            </label>
+           
+
+            <div class="der">
+                <button type="submit" class="submit"> Agregar</button>
+                <a (click)="closeModalNuevo()" id="btnCerrarModal2" class="a">Cancelar</a>
+            </div>
+        </form>
+        
+</div>

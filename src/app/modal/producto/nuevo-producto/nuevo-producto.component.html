@@ -1,0 +1,45 @@
+<div class="modal">
+    <div class="modal_body ">
+        <form class="form" (submit)="enviarEntrada()">
+            <p class="title">Nueva Entrada </p>
+
+            <label>
+                <input required type="text" [(ngModel)]="nuevaProducto.nombre" name="nombre"  class="input">
+                <span>Nombre</span>
+            </label>
+
+
+            <label>
+                <input required type="text" [(ngModel)]="nuevaProducto.marca" name="marca" class="input">
+                <span>Marca</span>
+            </label>
+
+            <div class="categoria">
+            <label>
+                <select required type="number" [(ngModel)]="nuevaProducto.idCategoria" name="idProducto" class="input" >
+                    <option *ngFor="let categoria of categorias" value={{categoria.idCategoria}}> {{categoria.nombre}}</option>
+                </select>
+                <span>Categoria</span>
+            </label>
+            <div class="containerButtonMas">
+            <button class="buttonMas" routerLink="/categorias"> Gestionar Categorias </button>
+            </div>
+            </div>
+
+            <label>
+                <input required type="number" [(ngModel)]="nuevaProducto.cantidad" name="cantidad" class="input">
+                <span>Cantidad</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="nuevaProducto.precio" name="precio" class="input">
+                <span>Precio</span>
+            </label>
+
+            <div class="der">
+                <button type="submit" class="submit"> Agregar</button>
+                <a (click)="closeModalNuevo()" id="btnCerrarModal2" class="a">Cancelar</a>
+            </div>
+        </form>
+        
+</div>

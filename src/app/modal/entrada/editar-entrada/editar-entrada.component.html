@@ -1,0 +1,34 @@
+<div class="modal">
+    <div class="modal_body ">
+        <form class="form" (submit)="grabarEntrada()">
+            <p class="title">Nueva Entrada </p>
+
+            <label>
+                <input required type="date" [(ngModel)]="entradaEditar.fecha" name="fecha" class="input">
+                <span>Fecha</span>
+            </label>
+
+
+            <label>
+                <select required type="number" [(ngModel)]="entradaEditar.idProducto" name="idProducto" class="input" >
+                    <option *ngFor="let producto of productos" value={{producto.idProducto}}>{{producto.nombre}}</option>
+                </select><span>Producto</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="entradaEditar.cantidad" name="cantidad" class="input">
+                <span>Cantidad</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="entradaEditar.costo" name="costo" class="input">
+                <span>Costo</span>
+            </label>
+
+            <div class="der">
+                <button type="submit" class="submit"> Agregar</button>
+                <a (click)="closeModalEditar()" id="btnCerrarModal2" class="a">Cancelar</a>
+            </div>
+        </form>
+        
+</div>

@@ -1,0 +1,58 @@
+
+
+<div *ngIf="modalEditarSwitch == true">
+    <app-editar-entrada></app-editar-entrada>>
+</div>
+
+<div *ngIf="modalNuevoSwitch == true">
+    <app-nueva-entrada></app-nueva-entrada>
+</div>
+
+
+<div class="limiter">
+
+<div class="container-table100">
+
+<button  (click)="openModalNuevo()"   type="button" id="btnAbrirModal2" class= "btn" >
+        Nueva mercaderia
+</button>
+<br>
+<div class="wrap-table100">
+<div class="table100">
+<table>
+<thead>
+<tr class="table100-head">
+<th class="column1">Fecha</th>
+<th class="column3">Producto</th>
+<th class="column2">Cantidad</th>
+<th class="column5">Costo</th>
+<th class="column6">Acciones</th>
+
+</tr>
+</thead>
+
+<tbody>
+<tr *ngFor="let entrada of entradas;  let rowIndex = index">
+    <td class="column1">{{ entrada.fecha | date: 'dd/MM/yyyy'}} </td>
+    <td class="column3">{{ entrada.oProducto.nombre}} - {{ entrada.oProducto.marca}}</td>
+    <td class="column2">{{ entrada.cantidad}}</td>
+    <td class="column5">{{ entrada.costo}}</td>
+    <td>
+        <div>
+            <a (click)="enviarEntrada(rowIndex)" > Editar</a>
+            
+            <a (click)="eliminarEntrada(rowIndex)"> Eliminar</a>
+        </div>
+    </td>
+
+</tr>
+
+
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+

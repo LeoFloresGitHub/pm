@@ -1,0 +1,132 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal_body {
+    background-color: white;
+    height: 80vh;
+    width: 70vh;
+    border-radius: 5px;
+  }
+
+  .form label {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+    .form label .input {
+        width: 100%;
+        padding: 10px 10px 20px 10px;
+        outline: 0;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 10px;
+        margin-bottom: 15px;
+        display: flex;
+    }
+
+        .form label .input + span {
+            position: absolute;
+            left: 10px;
+            top: 15px;
+            color: grey;
+            font-size: 0.9em;
+            cursor: text;
+            transition: 0.3s ease;
+        }
+
+        .form label .input:placeholder-shown + span {
+            top: 15px;
+            font-size: 0.9em;
+        }
+
+       
+
+        .form label .input:focus + span, .form label .input:valid + span {
+            top: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+         /* CAMBIOS */
+
+        .form label .input:read-only + span { /* Nueva regla para input en modo de solo lectura */
+            top: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+        }
+
+        .form label .input:valid + span {
+            color: green;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+
+         /* Cambios */
+
+        .form label .input:read-only + span {
+            color: green;
+            margin-top: 3px;
+            margin-left: 5px;
+        }
+
+
+
+.submit {
+    border: none;
+    outline: none;
+    background-color: #ff0000;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    cursor: pointer;
+}
+
+    .submit:hover {
+        background-color: rgb(235, 0, 0);
+    }
+
+.a {
+    border: none;
+    outline: none;
+    max-width: 350px;
+    margin-left: 20px;
+    align-items: center;
+    width: 50%;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    transform: .3s ease;
+    cursor: pointer;
+}
+
+    .a:hover {
+        background-color: #141212;
+        cursor: pointer;
+    }
+
+.der {
+    text-align: right;
+}
+
+.eliminar {
+    text-align: right;
+    margin-top: 2px;
+    margin-right: 13px;
+    margin-bottom: 8px;
+    z-index: 3;
+    padding: 2px;
+}
+
+

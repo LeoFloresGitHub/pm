@@ -1,0 +1,40 @@
+<div class="modal">
+    <div class="modal_body ">
+        <form class="form" (submit)="grabarProducto()">
+            <p class="title">Nuevo Producto </p>
+
+            <label>
+                <input required type="text" [(ngModel)]="productoEditar.nombre" name="nombre"  class="input">
+                <span>Nombre</span>
+            </label>
+
+
+            <label>
+                <input required type="text" [(ngModel)]="productoEditar.marca" name="marca" class="input">
+                <span>Marca</span>
+            </label>
+
+            <label>
+                <select required type="number" [(ngModel)]="productoEditar.idCategoria" name="idProducto" class="input" >
+                    <option *ngFor="let categoria of categorias" value={{categoria.idCategoria}}>{{categoria.nombre}}</option>
+                </select>
+                <span>Categoria</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="productoEditar.cantidad" name="cantidad" class="input">
+                <span>Cantidad</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="productoEditar.precio" name="precio" class="input">
+                <span>Precio</span>
+            </label>
+
+            <div class="der">
+                <button type="submit" class="submit"> Agregar</button>
+                <a (click)="closeModalEditar()" id="btnCerrarModal2" class="a">Cancelar</a>
+            </div>
+        </form>
+        
+</div>

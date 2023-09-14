@@ -1,0 +1,13 @@
+
+<div *ngIf="equipo">
+    <h1>{{equipo.nombre}}</h1>
+    <img [ngSrc]="equipo.imagen"  width="400" height="650">
+    <p>{{equipo.titulos}}</p>
+    
+</div>
+
+
+<div *ngIf="!equipo">
+    Equipos no encontrados
+</div>
+

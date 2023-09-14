@@ -1,0 +1,54 @@
+<div class="modal">
+    <div class="modal_body ">
+        <form class="form" (submit)="grabarSalida()">
+            <p class="title">Nueva Entrada </p>
+
+            <label>
+                <input required type="date" [(ngModel)]="salidaEditar.fecha" name="fecha" class="input">
+                <span>Fecha</span>
+            </label>
+
+
+            <label>
+                <select required type="number" [(ngModel)]="salidaEditar.idProducto" name="idProducto" class="input"
+                (ngModelChange)="cambiarDetalles(salidaEditar.idProducto)" >
+                    <option *ngFor="let producto of productos" value={{producto.idProducto}}>{{producto.nombre}}</option>
+                </select><span>Producto</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="salidaEditar.cantidad" name="cantidad" class="input"
+                (ngModelChange)="cambiarDetalles(salidaEditar.idProducto)">
+                <span>Cantidad</span>
+            </label>
+
+            <label>
+                <input required type="number" value={{salidaEditar.precio}} class="input" readonly>
+                <span>Precio</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="salidaEditar.delivery" name="delivery" class="input"
+                (ngModelChange)="cambiarDetalles(salidaEditar.idProducto)" >
+                <span>Delivery</span>
+            </label>
+
+            <label>
+                <input required type="number" [(ngModel)]="salidaEditar.descuento" name="descuento" class="input"
+                (ngModelChange)="cambiarDetalles(salidaEditar.idProducto)">
+                <span>Descuento</span>
+            </label>
+            
+
+            <label>
+                <input required type="number" [(ngModel)]="salidaEditar.total" name="total" value={{salidaEditar.total}}  class="input" readonly>
+                <span>Total</span>
+            </label>
+
+            <div class="der">
+                <button type="submit" class="submit"> Agregar</button>
+                <a (click)="closeModalEditar()" id="btnCerrarModal2" class="a">Cancelar</a>
+            </div>
+        </form>
+        
+</div>

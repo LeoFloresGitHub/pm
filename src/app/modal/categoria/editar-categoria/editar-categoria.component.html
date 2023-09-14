@@ -1,0 +1,21 @@
+<div class="modal">
+    <div class="modal_body ">
+        <form class="form" (submit)="grabarCategoria()">
+            <p class="title">Nueva Entrada </p>
+
+            
+
+            <label>
+                <input required type="text" [(ngModel)]="CategoriaEditar.nombre" name="nombre" class="input">
+                <span>Nombre</span>
+            </label>
+
+            
+
+            <div class="der">
+                <button type="submit" class="submit"> Agregar</button>
+                <a (click)="closeModalEditar()" id="btnCerrarModal2" class="a">Cancelar</a>
+            </div>
+        </form>
+        
+</div>
